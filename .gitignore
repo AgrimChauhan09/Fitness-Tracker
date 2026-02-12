@@ -1,0 +1,15 @@
+# Java compiled files
+*.class
+
+# Folders to ignore
+target/
+.idea/
+.mvn/
+bin/
+
+# OS files
+.DS_Store
+Thumbs.db
+HELP.md/
+mvnw.cmd
+mvnw
