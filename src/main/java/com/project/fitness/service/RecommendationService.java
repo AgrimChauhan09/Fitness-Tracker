@@ -1,6 +1,7 @@
 package com.project.fitness.service;
 
 import com.project.fitness.dto.RecommendationRequest;
+import com.project.fitness.exception.UserNotFoundException;
 import com.project.fitness.model.Activity;
 import com.project.fitness.model.Recommendation;
 import com.project.fitness.model.User;
@@ -39,9 +40,15 @@ public class RecommendationService {
 
     }
 
-    public List<Recommendation> getUserRecommendation(String userId){
-        return recommendationRepository.findByUserId(userId);
+    public List<Recommendation> getUserRecommendation(String userId) {
+        if (!userRepository.existsById(userId)) {
+            throw new UserNotFoundException("User not found for this id");
+        }
+        List<Recommendation> recommendations =
+                recommendationRepository.findByUserId(userId);
+        return recommendations;
     }
+
     public List<Recommendation> getActivityRecommendation(String activityId){
         return recommendationRepository.findByActivityId(activityId);
     }
