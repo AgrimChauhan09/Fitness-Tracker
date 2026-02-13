@@ -15,8 +15,10 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 
 public class ActivityService {
+
     private final ActivityRepository activityRepository;
     private final UserRepository userRepository;
+
     public ActivityResponse trackActivity(ActivityRequest request){
 
         User user=userRepository.findById(request.getUserId())

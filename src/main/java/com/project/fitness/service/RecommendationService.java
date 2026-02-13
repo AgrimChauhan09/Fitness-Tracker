@@ -45,8 +45,4 @@ public class RecommendationService {
     public List<Recommendation> getActivityRecommendation(String activityId){
         return recommendationRepository.findByActivityId(activityId);
     }
-
-
-
-
 }
