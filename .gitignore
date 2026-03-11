@@ -13,3 +13,8 @@ Thumbs.db
 HELP.md/
 mvnw.cmd
 mvnw
+
+.env
+.env.*
+application-dev.properties
+application-local.properties
